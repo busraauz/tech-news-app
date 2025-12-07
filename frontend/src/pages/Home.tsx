@@ -75,7 +75,7 @@ export const Home = () => {
         <h2 className="text-2xl font-bold mb-6">Latest Tech News</h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {listArticles.map((a: any) => (
+          {listArticles.map((a: Article) => (
             <ArticleCard key={a.id} article={a} />
           ))}
         </div>

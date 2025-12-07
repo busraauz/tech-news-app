@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { CATEGORIES } from "../utils/const";
-import { useParams, useSearchParams } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 
 
