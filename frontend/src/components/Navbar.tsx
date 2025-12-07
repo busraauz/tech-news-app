@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { CATEGORIES } from "../utils/const";
 import { useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 
 export const Navbar = () => {
@@ -21,16 +22,16 @@ export const Navbar = () => {
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center gap-8">
           {CATEGORIES.map((cat) => (
-            <a
+            <Link
+              to={cat.url}
               key={cat.name}
-              href={cat.url}
               className={`relative text-foreground hover:text-primary transition-brand hover-pulse ${cat.url === `${location.pathname}` ? 'text-primary' : 'text-foreground'}`}
             >
               {cat.name}
 
               {/* Animated underline */}
               <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
-            </a>
+            </Link>
           ))}
         </div>
 
@@ -51,13 +52,13 @@ export const Navbar = () => {
       {open && (
         <div className="bg-background px-4 pb-4 md:hidden animate-slide-in">
           {CATEGORIES.map((cat) => (
-            <a
+            <Link
+              to={cat.url}
               key={cat.name}
-              href={cat.url}
               className={`block py-2 text-foreground text-lg hover:text-primary transition-brand ${cat.url === `${location.pathname}` ? 'text-primary' : 'text-foreground'}`}
             >
               {cat.name}
-            </a>
+            </Link>
           ))}
         </div>
       )}
